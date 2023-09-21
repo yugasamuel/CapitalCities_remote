@@ -14,6 +14,7 @@
 		65E68D8C2ABC578A00EA3F3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E68D8B2ABC578A00EA3F3A /* Assets.xcassets */; };
 		65E68D8F2ABC578A00EA3F3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E68D8D2ABC578A00EA3F3A /* LaunchScreen.storyboard */; };
 		65E68D972ABC598C00EA3F3A /* Capital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E68D962ABC598C00EA3F3A /* Capital.swift */; };
+		65E68D992ABC931300EA3F3A /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E68D982ABC931300EA3F3A /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		65E68D8E2ABC578A00EA3F3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65E68D902ABC578A00EA3F3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65E68D962ABC598C00EA3F3A /* Capital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capital.swift; sourceTree = "<group>"; };
+		65E68D982ABC931300EA3F3A /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				65E68D822ABC578900EA3F3A /* AppDelegate.swift */,
 				65E68D842ABC578900EA3F3A /* SceneDelegate.swift */,
 				65E68D862ABC578900EA3F3A /* ViewController.swift */,
+				65E68D982ABC931300EA3F3A /* WebViewController.swift */,
 				65E68D962ABC598C00EA3F3A /* Capital.swift */,
 				65E68D882ABC578900EA3F3A /* Main.storyboard */,
 				65E68D8B2ABC578A00EA3F3A /* Assets.xcassets */,
@@ -144,6 +147,7 @@
 				65E68D872ABC578900EA3F3A /* ViewController.swift in Sources */,
 				65E68D832ABC578900EA3F3A /* AppDelegate.swift in Sources */,
 				65E68D972ABC598C00EA3F3A /* Capital.swift in Sources */,
+				65E68D992ABC931300EA3F3A /* WebViewController.swift in Sources */,
 				65E68D852ABC578900EA3F3A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

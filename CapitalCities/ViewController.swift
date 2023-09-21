@@ -70,6 +70,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         return annotationView
     }
     
+    /* IF WE USE ALERT
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         guard let capital = view.annotation as? Capital else { return }
         let placeName = capital.title
@@ -79,8 +80,16 @@ class ViewController: UIViewController, MKMapViewDelegate {
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         present(ac, animated: true)
     }
+     */
     
-
-
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        guard let capital = view.annotation as? Capital else { return }
+        let capitalName = capital.title
+        
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "WebView") as? WebViewController {
+            vc.capital = capitalName
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 
