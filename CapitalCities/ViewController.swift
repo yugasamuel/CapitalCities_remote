@@ -14,6 +14,8 @@ class ViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(showAlert))
+        
         let london = Capital(title: "London", coordinate: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), info: "Home to the 2012 Summer Olympics.")
         let oslo = Capital(title: "Oslo", coordinate: CLLocationCoordinate2D(latitude: 59.95, longitude: 10.75), info: "Founded over a thousand years ago.")
         let paris = Capital(title: "Paris", coordinate: CLLocationCoordinate2D(latitude: 48.8567, longitude: 2.3508), info: "Often called the City of Light.")
@@ -21,6 +23,29 @@ class ViewController: UIViewController, MKMapViewDelegate {
         let washington = Capital(title: "Washington DC", coordinate: CLLocationCoordinate2D(latitude: 38.895111, longitude: -77.036667), info: "Named after George himself.")
         
         mapView.addAnnotations([london, oslo, paris, rome, washington])
+    }
+    
+    @objc func showAlert() {
+        let ac = UIAlertController(title: "Change map style", message: nil, preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: "Standard", style: .default, handler: setMapType))
+        ac.addAction(UIAlertAction(title: "Hybrid", style: .default, handler: setMapType))
+        ac.addAction(UIAlertAction(title: "Satelite", style: .default, handler: setMapType))
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(ac, animated: true)
+    }
+    
+    func setMapType(action: UIAlertAction) {
+        guard let actionTitle = action.title else { return }
+        switch actionTitle {
+        case "Standard":
+            mapView.preferredConfiguration = MKStandardMapConfiguration(elevationStyle: .flat)
+        case "Hybrid":
+            mapView.preferredConfiguration = MKHybridMapConfiguration(elevationStyle: .flat)
+        case "Satelite":
+            mapView.preferredConfiguration = MKImageryMapConfiguration(elevationStyle: .flat)
+        default:
+            break
+        }
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
